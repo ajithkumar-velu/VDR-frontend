@@ -1,19 +1,27 @@
 import React from 'react'
 import useAuthMutations from '../hooks/useAuth.js'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
     const { logoutUser } = useAuthMutations()
+    const navigate = useNavigate()
     const handleLogout = async () => {
-
         await logoutUser.mutateAsync()
 
     }
     return (
-        <div className="navbar bg-base-100 shadow-sm">
-            <div className="flex-1">
+        <div className="navbar bg-base-300 shadow-sm flex justify-between">
+            <div className="flex-1 navbar-start">
                 <a className="btn btn-ghost text-xl">daisyUI</a>
             </div>
-            <div className="flex-none">
+            <div className="navbar-center hidden lg:flex">
+                <ul className="menu menu-horizontal px-1">
+                    <li onClick={()=>navigate('/')}  ><a>Home</a></li>
+                    <li onClick={()=>navigate('/deals')} ><a>Deals</a></li>
+                    <li onClick={()=>navigate('/myDeals')} ><a>My Deals</a></li>
+                </ul>
+            </div>
+            <div className="flex-none navbar-end">
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                         <div className="indicator">
