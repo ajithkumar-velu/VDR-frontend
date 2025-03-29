@@ -10,6 +10,18 @@ const ApiRoutes = {
     LOGOUT: {
         path: "/auth/logout",
         authentication:false,
-    }
+    },
+    GETDEALS: {
+        path: "/deal/get",
+        authentication: true
+    },
+    CREATEDEAL: {
+        path: "/deal/create",
+        authentication: true
+    },
+    GETMYDEALS: {
+        path: "/deal/getMyDeals",
+        authentication: true
+    },
 }
 export default ApiRoutes
