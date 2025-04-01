@@ -8,11 +8,12 @@ import Home from './pages/Home';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Deal from './pages/Deal';
 import Mydeals from './pages/Mydeals';
+import Negotiate from './pages/Negotiate';
 const App = () => {
   const user = useSelector(state=>state.userInfo.isautenticated)
   
   return (
-    <div  >
+    <div className='h-screen flex flex-col' >
       <Navbar />
       <Toaster />
       <Routes>
@@ -21,6 +22,8 @@ const App = () => {
         <Route path='/login' element={user? <Home />: <Login />} />
         <Route path='/deals' element={<Deal />} />
         <Route path='/myDeals' element={<Mydeals />} />
+        <Route path='/negotiate/:dealId' element={<Negotiate />} />
+        <Route path='/negotiate' element={<Negotiate />} />
       </Routes>
     </div>
   )

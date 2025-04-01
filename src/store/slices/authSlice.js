@@ -14,7 +14,7 @@ const authSlice = createSlice({
             state.isautenticated =  true
         },
         clearCredentials: (state)=>{
-            state.user = null,
+            state.User = null,
             state.isautenticated = false
         }
     }

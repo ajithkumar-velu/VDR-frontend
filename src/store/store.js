@@ -4,6 +4,7 @@ import authReduser from "./slices/authSlice"
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import dealsReducer from "./slices/dealsSlice"
+import messagesReducer from "./slices/messageSlice.js"
 
 const persistConfig = {
     key: "auth",
@@ -14,6 +15,7 @@ const store = configureStore({
     reducer: {
         userInfo: persistedAuthReducer,
         deals: dealsReducer,
+        messages: messagesReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

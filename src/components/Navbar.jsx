@@ -12,13 +12,14 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-300 shadow-sm flex justify-between">
             <div className="flex-1 navbar-start">
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">VDR</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li onClick={()=>navigate('/')}  ><a>Home</a></li>
                     <li onClick={()=>navigate('/deals')} ><a>Deals</a></li>
                     <li onClick={()=>navigate('/myDeals')} ><a>My Deals</a></li>
+                    <li onClick={()=>navigate('/negotiate')} ><a>Negotiate</a></li>
                 </ul>
             </div>
             <div className="flex-none navbar-end">
